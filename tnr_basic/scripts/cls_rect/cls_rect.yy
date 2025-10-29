@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"cls_rect",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cls_rect",
+  "parent":{
+    "name":"Classes",
+    "path":"folders/Scripts/Classes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,162 @@
+Imports System
+
+Module Program
+
+    Class Building
+        Public Name As String 'Name of the building
+        Public x1 As Integer 'X coordinate of the building
+        Public y1 As Integer 'Y coordinate of the building
+        Public x2 As Integer 'X coordinate of the building
+        Public y2 As Integer 'Y coordinate of the building
+        Public width As Integer 'width of the building
+        Public height As Integer 'height of the building
+
+        Public Sub New(xpos As Integer, ypos As Integer, Optional minWid As Integer = 3, Optional maxWid As Integer = 4, Optional minHei As Integer = 2, Optional maxHei As Integer = 2)
+            Dim rand As New Random()
+            x1 = xpos
+            y1 = ypos
+
+            width = rand.Next(minWid, maxWid + 1)
+            height = rand.Next(minHei, maxHei + 1)
+
+            x2 = x1 + width
+            y2 = y1 + height
+        End Sub
+
+        Public Overrides Function ToString() As String
+            Return $"{Name} X={x1} Y={y1} W={width} H={height}"
+        End Function
+
+        Public Sub Draw()
+            Console.SetCursorPosition(x1, y1)
+
+            For y As Integer = y1 To y2 - 1 Step 1
+                For x As Integer = x1 To x2 - 1 Step 1
+                    Console.SetCursorPosition(x, y)
+                    Console.Write("#")
+                Next x
+            Next y
+
+        End Sub
+    End Class
+
+    Sub Main(args As String())
+        ' Define variables
+        Dim townWidth As Integer = 24
+        Dim townHeight As Integer = 16
+        Dim buildingMinWidth = 3
+        Dim buildingMinHeight = 2
+        Dim buildingMaxWidth = 4
+        Dim buildingMaxHeight = 2
+
+        Dim streetMap(townWidth, townHeight) As Integer '2D array to represent the street map
+        Dim buildings As List(Of Building) 'List to store the buildings
+        Dim buildingCount As Integer = 0 'Counter to keep track of the number of buildings placed
+        Dim maxTries As Integer = 256
+        Dim buildingLimit As Integer = 20
+
+        ' Generate the street map
+        For yPos As Integer = 0 To townHeight
+            For xPos As Integer = 0 To townWidth
+                If yPos = 0 Or yPos = townHeight Or xPos = 0 Or xPos = townWidth Then
+                    streetMap(xPos, yPos) = 1 'Set border cells to be streets
+                ElseIf (xPos + yPos) Mod 4 = 0 Then
+                    If Int(Rnd() * 98) + 1 < 10 Then
+                        streetMap(xPos, yPos) = 1 'Randomly set some cells to be streets
+                    End If
+                End If
+            Next
+        Next
+
+        'Define a Building class to represent each building
+
+        'Generate the buildings
+        buildings = New List(Of Building)
+        While buildingCount < buildingLimit And maxTries > 0 'buildingLimit is the maximum number of buildings allowed
+            ' Generate a random building
+            Dim newBuilding As New Building(Int(Rnd() * townWidth) + 1, Int(Rnd() * townHeight) + 1)
+
+            newBuilding.Name = "Building " & buildingCount
+
+
+            ' Check if the building overlaps with another building
+            Dim overlap As Boolean = False
+            For Each oldBuilding As Building In buildings
+
+                If Overlaps(newBuilding, oldBuilding, 1) Then
+                    Console.Clear()
+                    overlap = True
+                    Console.ForegroundColor = ConsoleColor.Blue
+                    oldBuilding.Draw()
+                    Console.ForegroundColor = ConsoleColor.Red
+                    newBuilding.Draw()
+                    Console.ForegroundColor = ConsoleColor.Black
+
+
+                    Exit For
+                End If
+
+                If newBuilding.x1 + newBuilding.width >= townWidth Or newBuilding.y1 + newBuilding.height >= townHeight Then
+                    overlap = True
+                    'Console.WriteLine(building.ToString + vbNewLine + "building failed oob")
+                    Exit For
+                End If
+            Next
+
+            ' If the building doesn't overlap, add it to the list and mark its cells as occupied
+            If Not overlap Then
+                buildings.Add(newBuilding)
+                For y As Integer = newBuilding.y1 To newBuilding.y1 + newBuilding.height - 1
+                    For x As Integer = newBuilding.x1 To newBuilding.x1 + newBuilding.width - 1
+                        streetMap(x, y) = 2 'Mark cells as occupied by a building
+                    Next x
+                Next y
+
+                Console.WriteLine()
+
+                buildingCount += 1
+            End If
+
+            maxTries -= 1
+        End While
+
+        For Each building In buildings
+            building.Draw()
+        Next
+
+
+        ' Output the street map and building positions
+        ' For i As Integer = 0 To townWidth
+        '     For j As Integer = 0 To townHeight
+        '         If streetMap(i, j) = 0 Then
+        '             Console.Write(".") 'Empty cell
+        '         ElseIf streetMap(i, j) = 1 Then
+        '             Console.Write("#") 'Street cell
+        '         Else
+        '             Dim b As Building = buildings.Find(Function(x) x.x1 <= i And x.x1 + 4 >= i And x.y1 <= j And x.y1 + 4 >= j)
+        '             Console.Write("B") 'Building cell
+        '         End If
+        '     Next
+        '     Console.WriteLine()
+        ' Next
+
+    End Sub
+
+    Function Overlaps(b0 As Building, b1 As Building, border As Integer) As Boolean
+
+        If b0.x1 < b1.x2 + border AndAlso b0.x2 > b1.x1 - border AndAlso b0.y1 < b1.y2 + border AndAlso b0.y2 > b1.y1 - border Then
+            ' Rectangles are overlapping!
+            Return True 'Console.WriteLine("Rectangles are overlapping.")
+        Else
+            ' Rectangles are not overlapping
+            Return False 'Console.WriteLine("Rectangles are not overlapping.")
+        End If
+        '//If b0.x1 > b1.x1 - xBorder And b0.x1 < b1.x2 + xBorder Then Return False
+        '//If b0.y1 > b1.y1 - xBorder And b0.y1 < b1.y2 + xBorder Then Return False
+        '//Return True
+        'Return b0.x1 < b1.x2 + b1.width AndAlso b0.x1 + b0.width > b1.x2 AndAlso b0.y1 < b1.y2 + b1.height AndAlso b0.y1 + b0.height > b1.y2
+    End Function
+
+
+
+End Module

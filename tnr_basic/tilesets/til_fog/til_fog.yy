@@ -1,0 +1,38 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"til_fog",
+  "autoTileSets":[],
+  "macroPageTiles":{
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
+  },
+  "name":"til_fog",
+  "out_columns":3,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"Tile Sets",
+    "path":"folders/Sprites/Tile Sets.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"spr_fog",
+    "path":"sprites/spr_fog/spr_fog.yy",
+  },
+  "spriteNoExport":true,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":8,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":8,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":7,
+}

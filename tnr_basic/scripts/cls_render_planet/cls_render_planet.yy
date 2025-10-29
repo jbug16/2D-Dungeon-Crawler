@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"cls_render_planet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cls_render_planet",
+  "parent":{
+    "name":"Classes",
+    "path":"folders/Scripts/Classes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

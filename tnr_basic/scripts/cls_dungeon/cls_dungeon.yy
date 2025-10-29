@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"cls_dungeon",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cls_dungeon",
+  "parent":{
+    "name":"Classes",
+    "path":"folders/Scripts/Classes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

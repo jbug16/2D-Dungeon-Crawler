@@ -1,0 +1,4 @@
+spell,power,mpCost,hitPercent,element,statusEffect,desc,sqeuenceTravel,sequenceHit
+Fire,15,5,100,1,0,,seq_fire,seq_fire_hit
+Ice,15,5,100,2,0,,seq_null,seq_null
+Bolt,15,5,100,4,0,,seq_null,seq_null

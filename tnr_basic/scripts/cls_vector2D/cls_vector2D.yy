@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"cls_vector2D",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cls_vector2D",
+  "parent":{
+    "name":"Classes",
+    "path":"folders/Scripts/Classes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

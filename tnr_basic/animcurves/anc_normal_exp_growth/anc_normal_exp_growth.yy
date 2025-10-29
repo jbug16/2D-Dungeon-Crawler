@@ -1,0 +1,29 @@
+{
+  "$GMAnimCurve":"",
+  "%Name":"anc_normal_exp_growth",
+  "channels":[
+    {"$GMAnimCurveChannel":"","%Name":"value","colour":4290799884,"name":"value","points":[
+        {"th0":-0.1,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":0.0,"y":0.0,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.025,"y":96.0,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.050239235,"y":400.0,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.1,"y":2976.0,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.2,"y":19616.0,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.3,"y":68304.0,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.4,"y":164184.0,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.5,"y":323248.0,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.6,"y":561528.0,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.7,"y":895016.0,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.8,"y":1339672.0,},
+        {"th0":1.0,"th1":-1.0,"tv0":0.0,"tv1":0.0,"x":0.9,"y":1911552.0,},
+        {"th0":-0.1,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":1.0,"y":2637112.0,},
+      ],"resourceType":"GMAnimCurveChannel","resourceVersion":"2.0","visible":true,},
+  ],
+  "function":0,
+  "name":"anc_normal_exp_growth",
+  "parent":{
+    "name":"Animation Curves",
+    "path":"folders/Animation Curves.yy",
+  },
+  "resourceType":"GMAnimCurve",
+  "resourceVersion":"2.0",
+}

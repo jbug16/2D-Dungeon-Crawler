@@ -1,0 +1,1 @@
+DestroyPot(full, contents); 
