@@ -50,6 +50,7 @@ function StatsUpdate(){
 	if stats.hp <= 0 then {
 		if stats.class = ACTOR_CLASS_PLAYER then {
 			stats.status = STATUS_KO;
+			game_restart();
 		}//end if
 	
 		if stats.class = ACTOR_CLASS_MONSTER then {
