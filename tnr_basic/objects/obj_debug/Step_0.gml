@@ -49,13 +49,13 @@ if keyboard_check_pressed(ord("I")) then {
 	obj_camera.FadeIn(20, c_black);
 }//end if
 
-if keyboard_check_pressed(ord("D")) then {
-	for (var yp = 0; yp < room_height div 8; ++yp) {
-	    for (var xp = 0; xp < room_width div 8; ++xp) {
-		    tilemap_set(obj_stats.fog_tilemap, 6, xp,yp)// code here
-		}
-	}
-}//end if
+//if keyboard_check_pressed(ord("D")) then {
+//	for (var yp = 0; yp < room_height div 8; ++yp) {
+//	    for (var xp = 0; xp < room_width div 8; ++xp) {
+//		    tilemap_set(obj_stats.fog_tilemap, 6, xp,yp)// code here
+//		}
+//	}
+//}//end if
 
 if keyboard_check_pressed(ord("F")) then {
 	obj_camera.DefogRoom(obj_player.x,obj_player.y);

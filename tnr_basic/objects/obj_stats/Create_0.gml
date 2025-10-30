@@ -383,7 +383,7 @@ function ProcessMenu() {
 		    sound_play(snd_select_item, false);
 			if setItemIndex < -1 then setItemIndex = 7;
 			if setItemIndex > 7 then setItemIndex = -1;
-		}//end if
+		}
 	}
 }//end function
 

@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_stairs_down",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_stairs_down",
   "overriddenProperties":[],
@@ -35,5 +37,5 @@
     "path":"sprites/spr_stairs_down/spr_stairs_down.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }
