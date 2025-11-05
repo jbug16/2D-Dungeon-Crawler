@@ -1,5 +1,5 @@
 {
-  "$GMNotes":"",
+  "$GMNotes":"v1",
   "%Name":"vb.net module for town genb",
   "name":"vb.net module for town genb",
   "parent":{

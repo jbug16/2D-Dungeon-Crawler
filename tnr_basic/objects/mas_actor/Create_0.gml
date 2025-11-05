@@ -227,14 +227,18 @@ function PlayerAction() {
 
 	if ActorsNotMoving() then {
 		if obj_controller.CheckButton(K_PB) then {
-			var objId = CheckForObject(mas_object,false);
-			var actId = CheckForObject(mas_actor,false);
+			var objId = CheckForObject(mas_object);
+			var actId = CheckForObject(mas_actor);
 			
 			if instance_exists(objId) then {				
 				if objId.object_index != obj_pot_large and objId.object_index != obj_pot_small  {
 					ChangeState(ST_INTERACTING);
 				}//end if	
-				objId.Interacted();						
+				
+				// Only call Interacted if it's not a staircase
+		        if objId.object_index != obj_stairs_up and objId.object_index != obj_stairs_down {
+		            objId.Interacted();	
+		        }//end if					
 			}//end if	
 			
 			if instance_exists(actId) then {
@@ -264,14 +268,24 @@ function PlayerAction() {
 		}//end if
 		
 		if obj_controller.CheckButton(K_PA) then {
-			var lootId = CheckForLoot();	
-			if instance_exists(lootId) then {
+			// Check for stairs first (standing on them)
+			var stairId = CheckForObjectAt(mas_object, middle_x(), middle_y());
+			
+			if instance_exists(stairId) and (stairId.object_index == obj_stairs_up or stairId.object_index == obj_stairs_down) {
 				ChangeState(ST_INTERACTING);
-				lootId.Interacted();					
-				MoveMonsters();				
+				stairId.Interacted();
+				MoveMonsters();
 			}else{
-				TryToUseItem();
-			}//end if				
+				// No stairs, check for loot
+				var lootId = CheckForLoot();	
+				if instance_exists(lootId) then {
+					ChangeState(ST_INTERACTING);
+					lootId.Interacted();					
+					MoveMonsters();				
+				}else{
+					TryToUseItem();
+				}//end if	
+			}//end if			
 		}//end if
 			
 		UpdateTilePosition();

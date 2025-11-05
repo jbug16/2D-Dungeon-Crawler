@@ -117,6 +117,14 @@ function DefogArea(xStart, yStart, xEnd, yEnd) {
 	return done;
 }//end function
 
+function DefogAreaInstant(xStart, yStart, xEnd, yEnd) {
+	for (var tx = xStart; tx <= xEnd; tx += 8) {
+	    for (var ty = yStart; ty <= yEnd; ty += 8)  {
+		    tilemap_set_at_pixel(obj_stats.fog_tilemap, 0, tx, ty);
+		}//end for
+	}//end for
+}//end function
+
 function FindCollisionTilePositionsByType(tilemap, tileIndex){
 	var tilePositions = []
 	for (var ty = 0; ty <= room_height; ty += 16) {
@@ -196,6 +204,15 @@ function DefogAroundMe(xStart, yStart){
 
 function UncoverRoom(){
 	if is_undefined(defogRoomArea) then return;
+	
+	if (is_undefined(defogRoomArea.x0) || 
+	    is_undefined(defogRoomArea.y0) || 
+	    is_undefined(defogRoomArea.x1) || 
+	    is_undefined(defogRoomArea.y1)) {
+		defogRoomArea = undefined;
+		return;
+	}
+	
 	defogTimer += 1;
 	
 	
@@ -203,6 +220,7 @@ function UncoverRoom(){
 		var done = DefogArea(defogRoomArea.x0 - 8, defogRoomArea.y0 - 24, defogRoomArea.x1 + 16, defogRoomArea.y1  + 16);
 		if done then defogRoomArea = undefined;
 		defogTimer = 0;
+		print("uncovered");
 	}//end if
 
 }//end function
