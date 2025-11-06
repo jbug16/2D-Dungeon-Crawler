@@ -493,90 +493,96 @@ function MoveMonsters() {
 				if LineOfSight(myMiddleX, myMiddleY, targetMiddleX, targetMiddleY) then {
 					RemoveState(ST_WAITING);	
 				}//end if
-			}else{							
-				var xdir = 0;
-				var ydir = 0;
+			}else{		
+				if (object_index == obj_ranged_enemy && RangedAttack()) {
+					// Ranged attack was queued --> skip normal movement logic
+					// Just reserve tile
+					obj_stats.ReserveTile(destX div TILE_SIZE, destY div TILE_SIZE);
+				} else {
+					var xdir = 0;
+					var ydir = 0;
 						
-				var northDistance = point_distance(targetMiddleX,targetMiddleY,myMiddleX + 0,myMiddleY - TILE_SIZE);
-				var southDistance = point_distance(targetMiddleX,targetMiddleY,myMiddleX + 0,myMiddleY + TILE_SIZE);
-				var eastDistance  = point_distance(targetMiddleX,targetMiddleY,myMiddleX + TILE_SIZE,myMiddleY - 0);
-				var westDistance  = point_distance(targetMiddleX,targetMiddleY,myMiddleX - TILE_SIZE,myMiddleY - 0);
+					var northDistance = point_distance(targetMiddleX,targetMiddleY,myMiddleX + 0,myMiddleY - TILE_SIZE);
+					var southDistance = point_distance(targetMiddleX,targetMiddleY,myMiddleX + 0,myMiddleY + TILE_SIZE);
+					var eastDistance  = point_distance(targetMiddleX,targetMiddleY,myMiddleX + TILE_SIZE,myMiddleY - 0);
+					var westDistance  = point_distance(targetMiddleX,targetMiddleY,myMiddleX - TILE_SIZE,myMiddleY - 0);
 			
-				var eastTilCollide  = collision_tile(myMiddleX + TILE_SIZE, myMiddleY + 0) == 1;
-				var northTilCollide = collision_tile(myMiddleX + 0, myMiddleY - TILE_SIZE) == 1;
-				var westTilCollide  = collision_tile(myMiddleX - TILE_SIZE, myMiddleY + 0) == 1;
-				var southTilCollide = collision_tile(myMiddleX + 0, myMiddleY + TILE_SIZE) == 1;
+					var eastTilCollide  = collision_tile(myMiddleX + TILE_SIZE, myMiddleY + 0) == 1;
+					var northTilCollide = collision_tile(myMiddleX + 0, myMiddleY - TILE_SIZE) == 1;
+					var westTilCollide  = collision_tile(myMiddleX - TILE_SIZE, myMiddleY + 0) == 1;
+					var southTilCollide = collision_tile(myMiddleX + 0, myMiddleY + TILE_SIZE) == 1;
 			
-				var eastObjCollide  = CheckForObjectAt(mas_object, myMiddleX + TILE_SIZE, myMiddleY + 0) > 0;
-				var northObjCollide = CheckForObjectAt(mas_object, myMiddleX + 0, myMiddleY - TILE_SIZE) > 0;
-				var westObjCollide  = CheckForObjectAt(mas_object, myMiddleX - TILE_SIZE, myMiddleY + 0) > 0;
-				var southObjCollide = CheckForObjectAt(mas_object, myMiddleX + 0, myMiddleY + TILE_SIZE) > 0;
+					var eastObjCollide  = CheckForObjectAt(mas_object, myMiddleX + TILE_SIZE, myMiddleY + 0) > 0;
+					var northObjCollide = CheckForObjectAt(mas_object, myMiddleX + 0, myMiddleY - TILE_SIZE) > 0;
+					var westObjCollide  = CheckForObjectAt(mas_object, myMiddleX - TILE_SIZE, myMiddleY + 0) > 0;
+					var southObjCollide = CheckForObjectAt(mas_object, myMiddleX + 0, myMiddleY + TILE_SIZE) > 0;
 			
 				
-				var eastActCollide  =  CheckForObjectAt(mas_actor, myMiddleX + TILE_SIZE, myMiddleY + 0) > 0;
-				var northActCollide =  CheckForObjectAt(mas_actor, myMiddleX + 0, myMiddleY - TILE_SIZE) > 0;
-				var westActCollide  =  CheckForObjectAt(mas_actor, myMiddleX - TILE_SIZE, myMiddleY + 0) > 0;
-				var southActCollide =  CheckForObjectAt(mas_actor, myMiddleX + 0, myMiddleY + TILE_SIZE) > 0;
+					var eastActCollide  =  CheckForObjectAt(mas_actor, myMiddleX + TILE_SIZE, myMiddleY + 0) > 0;
+					var northActCollide =  CheckForObjectAt(mas_actor, myMiddleX + 0, myMiddleY - TILE_SIZE) > 0;
+					var westActCollide  =  CheckForObjectAt(mas_actor, myMiddleX - TILE_SIZE, myMiddleY + 0) > 0;
+					var southActCollide =  CheckForObjectAt(mas_actor, myMiddleX + 0, myMiddleY + TILE_SIZE) > 0;
 									
-				var eastCollide  = eastTilCollide 	or eastObjCollide  or eastActCollide;  
-				var northCollide = northTilCollide	or northObjCollide or northActCollide; 
-				var westCollide  = westTilCollide 	or westObjCollide  or westActCollide;  
-				var southCollide = southTilCollide	or southObjCollide or southActCollide;
+					var eastCollide  = eastTilCollide 	or eastObjCollide  or eastActCollide;  
+					var northCollide = northTilCollide	or northObjCollide or northActCollide; 
+					var westCollide  = westTilCollide 	or westObjCollide  or westActCollide;  
+					var southCollide = southTilCollide	or southObjCollide or southActCollide;
 			
-				eastDistance  += eastCollide  * 255;
-				northDistance += northCollide * 255;
-				westDistance  += westCollide  * 255;			
-				southDistance += southCollide * 255;
+					eastDistance  += eastCollide  * 255;
+					northDistance += northCollide * 255;
+					westDistance  += westCollide  * 255;			
+					southDistance += southCollide * 255;
 			
 			
-				var distArray = [eastDistance, northDistance, westDistance, southDistance];
-				var smallestDirection = array_min_index(distArray) * 90;
+					var distArray = [eastDistance, northDistance, westDistance, southDistance];
+					var smallestDirection = array_min_index(distArray) * 90;
 			
-				xdir = dcos(smallestDirection)  * TILE_SIZE;
-				ydir = -dsin(smallestDirection) * TILE_SIZE;
+					xdir = dcos(smallestDirection)  * TILE_SIZE;
+					ydir = -dsin(smallestDirection) * TILE_SIZE;
 				
-				//FAVOR X MOVEMENT OVER Y
-					if xdir != 0 then {
-						ydir = 0;
-					}//end if
+					//FAVOR X MOVEMENT OVER Y
+						if xdir != 0 then {
+							ydir = 0;
+						}//end if
 					
-				destX = snap(x + xdir, TILE_SIZE);
-				destY = snap(y + ydir, TILE_SIZE);
+					destX = snap(x + xdir, TILE_SIZE);
+					destY = snap(y + ydir, TILE_SIZE);
 			
-				if destX != x or destY != y then {
-					faceDirection = point_direction(x,y,destX,destY);
-				}//end if
+					if destX != x or destY != y then {
+						faceDirection = point_direction(x,y,destX,destY);
+					}//end if
 				
-				//CHECK FOR ATTACK
-				var eastTgtCollide  = CheckForObjectAt(stats.target, myMiddleX + TILE_SIZE, myMiddleY + 0) > 0;
-				var northTgtCollide = CheckForObjectAt(stats.target, myMiddleX + 0, myMiddleY - TILE_SIZE) > 0;
-				var westTgtCollide  = CheckForObjectAt(stats.target, myMiddleX - TILE_SIZE, myMiddleY + 0) > 0;
-				var southTgtCollide = CheckForObjectAt(stats.target, myMiddleX + 0, myMiddleY + TILE_SIZE) > 0;
-				var attack = eastTgtCollide  or	northTgtCollide or	westTgtCollide  or	southTgtCollide;
+					//CHECK FOR ATTACK
+					var eastTgtCollide  = CheckForObjectAt(stats.target, myMiddleX + TILE_SIZE, myMiddleY + 0) > 0;
+					var northTgtCollide = CheckForObjectAt(stats.target, myMiddleX + 0, myMiddleY - TILE_SIZE) > 0;
+					var westTgtCollide  = CheckForObjectAt(stats.target, myMiddleX - TILE_SIZE, myMiddleY + 0) > 0;
+					var southTgtCollide = CheckForObjectAt(stats.target, myMiddleX + 0, myMiddleY + TILE_SIZE) > 0;
+					var attack = eastTgtCollide  or	northTgtCollide or	westTgtCollide  or	southTgtCollide;
 			
 			
-				var reservedCollide = obj_stats.TileReserved(destX div TILE_SIZE, destY div TILE_SIZE);
+					var reservedCollide = obj_stats.TileReserved(destX div TILE_SIZE, destY div TILE_SIZE);
 				
-				if reservedCollide then {
-					print("tried to move into reserved tile");	
-					obj_stats.TileReserved(destX div TILE_SIZE, destY div TILE_SIZE);//debug call
-				}//end if
+					if reservedCollide then {
+						print("tried to move into reserved tile");	
+						obj_stats.TileReserved(destX div TILE_SIZE, destY div TILE_SIZE);//debug call
+					}//end if
 				
-				if attack then {
-					Interact(id, stats.target)	;
-					destX = x;
-					destY = y;
-					faceDirection = point_direction(x,y,stats.target.x,stats.target.y);	
-				}//end if
+					if attack then {
+						Interact(id, stats.target)	;
+						destX = x;
+						destY = y;
+						faceDirection = point_direction(x,y,stats.target.x,stats.target.y);	
+					}//end if
 						
-				if CheckForCollision() or reservedCollide then {
-					destX = x;
-					destY = y;
-				}else{
-					if not attack then {
-						x += dcos(smallestDirection);
-						y += -dsin(smallestDirection);
-					}
+					if CheckForCollision() or reservedCollide then {
+						destX = x;
+						destY = y;
+					}else{
+						if not attack then {
+							x += dcos(smallestDirection);
+							y += -dsin(smallestDirection);
+						}
+					}//end if
 				}//end if
 			}//end if
 			

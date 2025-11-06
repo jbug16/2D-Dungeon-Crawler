@@ -5,6 +5,9 @@ function AttackData() constructor {
 	target = undefined ;
 	attackType = ATTACK_TYPE_NULL;
 	attackWaitTime = 45;
+	attackSpellData = undefined;
+	attackThrowData = undefined;
+	selfUseData = undefined;
 }//end function
 
 function Point(newX, newY) constructor {
