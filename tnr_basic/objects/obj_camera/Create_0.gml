@@ -220,7 +220,6 @@ function UncoverRoom(){
 		var done = DefogArea(defogRoomArea.x0 - 8, defogRoomArea.y0 - 24, defogRoomArea.x1 + 16, defogRoomArea.y1  + 16);
 		if done then defogRoomArea = undefined;
 		defogTimer = 0;
-		print("uncovered");
 	}//end if
 
 }//end function

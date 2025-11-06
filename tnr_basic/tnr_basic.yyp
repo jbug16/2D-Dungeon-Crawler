@@ -117,6 +117,8 @@
     {"id":{"name":"obj_weapon","path":"objects/obj_weapon/obj_weapon.yy",},},
     {"id":{"name":"room_init","path":"rooms/room_init/room_init.yy",},},
     {"id":{"name":"room_level_1","path":"rooms/room_level_1/room_level_1.yy",},},
+    {"id":{"name":"room_level_2","path":"rooms/room_level_2/room_level_2.yy",},},
+    {"id":{"name":"room_level_3","path":"rooms/room_level_3/room_level_3.yy",},},
     {"id":{"name":"room_test_dungeon","path":"rooms/room_test_dungeon/room_test_dungeon.yy",},},
     {"id":{"name":"cls_dungeon","path":"scripts/cls_dungeon/cls_dungeon.yy",},},
     {"id":{"name":"cls_music","path":"scripts/cls_music/cls_music.yy",},},
@@ -198,6 +200,8 @@
     {"roomId":{"name":"room_init","path":"rooms/room_init/room_init.yy",},},
     {"roomId":{"name":"room_test_dungeon","path":"rooms/room_test_dungeon/room_test_dungeon.yy",},},
     {"roomId":{"name":"room_level_1","path":"rooms/room_level_1/room_level_1.yy",},},
+    {"roomId":{"name":"room_level_2","path":"rooms/room_level_2/room_level_2.yy",},},
+    {"roomId":{"name":"room_level_3","path":"rooms/room_level_3/room_level_3.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[

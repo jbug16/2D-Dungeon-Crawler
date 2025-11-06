@@ -1,0 +1,1 @@
+// So the player is on top of the stairs

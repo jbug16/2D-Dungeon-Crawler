@@ -76,6 +76,8 @@
     {"name":"obj_warp","order":7,"path":"objects/obj_warp/obj_warp.yy",},
     {"name":"obj_weapon","order":10,"path":"objects/obj_weapon/obj_weapon.yy",},
     {"name":"room_level_1","order":3,"path":"rooms/room_level_1/room_level_1.yy",},
+    {"name":"room_level_2","order":4,"path":"rooms/room_level_2/room_level_2.yy",},
+    {"name":"room_level_3","order":5,"path":"rooms/room_level_3/room_level_3.yy",},
     {"name":"room_test_dungeon","order":2,"path":"rooms/room_test_dungeon/room_test_dungeon.yy",},
     {"name":"cls_dungeon","order":1,"path":"scripts/cls_dungeon/cls_dungeon.yy",},
     {"name":"cls_music","order":10,"path":"scripts/cls_music/cls_music.yy",},

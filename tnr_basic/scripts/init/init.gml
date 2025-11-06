@@ -18,4 +18,7 @@ function init() {
 	window_set_size(CAMERA_WIDTH * window_scale,CAMERA_HEIGHT * window_scale);
 	//window_set_position(1024,1204);
 	
+	// Level manager
+	global.levels = [room_level_1, room_level_2, room_level_3];
+	global.current_level = 0;
 }

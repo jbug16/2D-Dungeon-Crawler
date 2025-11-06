@@ -1,0 +1,1 @@
+itemId = ITEM_ICE1_SPELL;

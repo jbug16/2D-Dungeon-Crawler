@@ -1,2 +1,2 @@
 init();
-room_goto_next();
+room_goto(global.levels[global.current_level]);
