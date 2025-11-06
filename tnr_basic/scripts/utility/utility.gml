@@ -452,3 +452,20 @@ function random_name_2(max_length) {
     var rest_of_name = string_copy(name, 2, string_length(name) - 1);
     return first_letter + rest_of_name;
 }
+
+/// @description Snaps an angle to the nearest valid direction based on mode
+/// @param {real} angle The original angle (0-360)
+/// @param {real} mode DIR_FOUR_WAY, DIR_EIGHT_WAY
+function SnapDirection(angle, mode) {
+    // Normalize angle to 0-360
+    angle = angle mod 360;
+    if (angle < 0) angle += 360;
+    
+    if (mode == DIR_FOUR_WAY) {
+        // Snap to 0, 90, 180, 270
+        return round(angle / 90) * 90;
+    } else if (mode == DIR_EIGHT_WAY){
+        // DIRECTION_EIGHT_WAY: Snap to 0, 45, 90, 135, 180, 225, 270, 315
+        return round(angle / 45) * 45;
+    }
+}

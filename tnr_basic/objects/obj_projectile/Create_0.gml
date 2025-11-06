@@ -9,7 +9,7 @@ damage = 0;
 attackType = ATTACK_TYPE_NULL;	
 spellData = undefined;
 thrownItemData = undefined;
-
+passThrough = false;
 
 function ApplyDamage() {		    
 	//IF ATTACK LANDS	

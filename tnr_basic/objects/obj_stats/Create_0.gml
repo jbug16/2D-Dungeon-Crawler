@@ -756,13 +756,27 @@ function ProcessAttackQueue(){
 			var spellData = attData.attackSpellData;
 			
 			//CREATE SHOT
-			var shotDirection = attacker.faceDirection
+			var shotDirection = attacker.faceDirection;
+			
+			// Update shot direction
+			if (!is_undefined(spellData) && variable_struct_exists(spellData, "directionMode")) {
+		        if (spellData.directionMode == DIR_N_WAY && instance_exists(defender)) {
+		            // Calculate precise angle from attacker to defender
+		            shotDirection = point_direction(middle_x(attacker), middle_y(attacker), defender.destX + 8, defender.destY + 8);
+		        } else {
+		            // For FOUR_WAY and EIGHT_WAY, snap the face direction
+		            shotDirection = SnapDirection(shotDirection, spellData.directionMode);
+		        }
+		    }
 			
 			var projId        = instance_create_depth(middle_x(attacker), middle_y(attacker),attacker.depth - 1, obj_projectile);
 			projId.parent     = attacker;	
 			projId.attackType = ATTACK_TYPE_MAGIC;	
 			projId.spellData  = spellData;	
-			projId.direction  = shotDirection;	
+			projId.direction  = shotDirection;
+			if (!is_undefined(spellData) && variable_struct_exists(spellData, "passThrough")) {
+		        projId.passThrough = spellData.passThrough;
+		    }
 		}//end if
 	
 		if attackType == ATTACK_TYPE_THROW {

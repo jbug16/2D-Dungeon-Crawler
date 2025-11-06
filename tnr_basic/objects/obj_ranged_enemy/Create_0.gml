@@ -22,7 +22,11 @@ enemySpellData = {
     statusEffect: STATUS_NULL,
     description: "Enemy ranged attack",
     travelSequence: seq_fire,
-    hitSequence: seq_fire_hit
+    hitSequence: seq_fire_hit,
+	
+	// Directions
+	directionMode: DIR_EIGHT_WAY,
+	passThrough: false
 };
 
 // Custom attack function for ranged enemies

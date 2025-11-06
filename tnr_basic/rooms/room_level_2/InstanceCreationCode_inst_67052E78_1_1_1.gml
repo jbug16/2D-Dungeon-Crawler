@@ -1,1 +1,0 @@
-itemId = ITEM_FIRE1_SPELL;

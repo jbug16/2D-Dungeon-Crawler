@@ -1,1 +1,0 @@
-itemId = ITEM_BOLT1_SPELL;

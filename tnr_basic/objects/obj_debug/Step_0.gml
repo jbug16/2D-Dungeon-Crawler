@@ -30,6 +30,12 @@ if keyboard_check_pressed(ord("G")) then {
 
 }//end if
 
+if keyboard_check_pressed(ord("H")) then {
+	obj_player.stats.hp = obj_player.stats.max_hp;
+	obj_player.stats.mp = obj_player.stats.max_mp;
+	obj_player.stats.fp = obj_player.stats.max_fp;
+}//end if
+
 if keyboard_check_pressed(ord("R")) then {
 	game_restart();	
 }//end if

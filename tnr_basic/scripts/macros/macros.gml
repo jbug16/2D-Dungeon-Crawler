@@ -9,6 +9,11 @@
 #macro ATTACK_TYPE_MONSTER               0x80
 #macro ATTACK_TYPE_USE_ITEM              0x100
 
+// Ranged attack directions
+#macro DIR_FOUR_WAY  0
+#macro DIR_EIGHT_WAY 1
+#macro DIR_N_WAY     2
+
 	#macro TILE_SIZE 0x10
 
 	enum TILE_TYPE {
