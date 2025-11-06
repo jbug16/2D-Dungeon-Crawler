@@ -11,5 +11,8 @@ if instance_exists(target) then {
 }//end if
 
 if attackType == ATTACK_TYPE_MAGIC {
-	seqID = layer_sequence_create("lay_instances", x, y , spellData.hitSequence);
+	// Safety check
+	if !is_undefined(spellData) {
+		seqID = layer_sequence_create("lay_instances", x, y , spellData.hitSequence);
+	}//end if
 }//end if

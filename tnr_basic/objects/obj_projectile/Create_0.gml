@@ -20,7 +20,10 @@ function ApplyDamage() {
 	var dmg = 0;
 	
 	if attackType == ATTACK_TYPE_MAGIC then {
-		dmg = obj_stats.CalculateMagicalAttackDamage(parent.stats, target.stats, spellData);		
+		// Safety check - make sure spell data exists
+		if !is_undefined(spellData) {
+			dmg = obj_stats.CalculateMagicalAttackDamage(parent.stats, target.stats, spellData);
+		} else dmg = damage;
 	}//end if
 	
 	if attackType == ATTACK_TYPE_THROW then {

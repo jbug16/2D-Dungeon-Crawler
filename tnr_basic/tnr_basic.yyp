@@ -105,6 +105,7 @@
     {"id":{"name":"obj_pot_large","path":"objects/obj_pot_large/obj_pot_large.yy",},},
     {"id":{"name":"obj_pot_small","path":"objects/obj_pot_small/obj_pot_small.yy",},},
     {"id":{"name":"obj_projectile","path":"objects/obj_projectile/obj_projectile.yy",},},
+    {"id":{"name":"obj_ranged_enemy","path":"objects/obj_ranged_enemy/obj_ranged_enemy.yy",},},
     {"id":{"name":"obj_scroll_map","path":"objects/obj_scroll_map/obj_scroll_map.yy",},},
     {"id":{"name":"obj_shader","path":"objects/obj_shader/obj_shader.yy",},},
     {"id":{"name":"obj_slab","path":"objects/obj_slab/obj_slab.yy",},},

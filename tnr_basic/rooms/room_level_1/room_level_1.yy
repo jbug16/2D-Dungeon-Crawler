@@ -11,7 +11,6 @@
     {"name":"inst_2EBFD83C_1_1","path":"rooms/room_level_1/room_level_1.yy",},
     {"name":"inst_271C189D_1_1","path":"rooms/room_level_1/room_level_1.yy",},
     {"name":"inst_441279D8_1_1","path":"rooms/room_level_1/room_level_1.yy",},
-    {"name":"inst_29521C67_1_1","path":"rooms/room_level_1/room_level_1.yy",},
     {"name":"inst_67052E78_1_1","path":"rooms/room_level_1/room_level_1.yy",},
     {"name":"inst_1555943_1_1","path":"rooms/room_level_1/room_level_1.yy",},
     {"name":"inst_19576FE1_1_1","path":"rooms/room_level_1/room_level_1.yy",},
@@ -50,6 +49,7 @@
     {"name":"inst_798A3D35_1_1","path":"rooms/room_level_1/room_level_1.yy",},
     {"name":"inst_5D8CC4DB_1_1","path":"rooms/room_level_1/room_level_1.yy",},
     {"name":"inst_2E1379DE_1_1","path":"rooms/room_level_1/room_level_1.yy",},
+    {"name":"inst_27B0921A","path":"rooms/room_level_1/room_level_1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -76,7 +76,6 @@
         {"$GMRInstance":"v4","%Name":"inst_2EBFD83C_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":2,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2EBFD83C_1_1","objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":336.0,"y":144.0,},
         {"$GMRInstance":"v4","%Name":"inst_271C189D_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":1,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_271C189D_1_1","objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":208.0,},
         {"$GMRInstance":"v4","%Name":"inst_441279D8_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":1,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_441279D8_1_1","objectId":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":272.0,"y":208.0,},
-        {"$GMRInstance":"v4","%Name":"inst_29521C67_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_29521C67_1_1","objectId":{"name":"obj_dark_knight","path":"objects/obj_dark_knight/obj_dark_knight.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":176.0,"y":80.0,},
         {"$GMRInstance":"v4","%Name":"inst_67052E78_1_1","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_67052E78_1_1","objectId":{"name":"obj_chest_large","path":"objects/obj_chest_large/obj_chest_large.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_chest_large","path":"objects/obj_chest_large/obj_chest_large.yy",},"propertyId":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"7",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_chest_large","path":"objects/obj_chest_large/obj_chest_large.yy",},"propertyId":{"name":"itemId","path":"objects/obj_chest_large/obj_chest_large.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"9",},
@@ -122,6 +121,7 @@
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":16.0,"y":64.0,},
         {"$GMRInstance":"v4","%Name":"inst_3ED6D63A_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3ED6D63A_1_1","objectId":{"name":"obj_dark_knight","path":"objects/obj_dark_knight/obj_dark_knight.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":304.0,"y":64.0,},
         {"$GMRInstance":"v4","%Name":"inst_1F5EC72_1_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1F5EC72_1_1","objectId":{"name":"obj_dark_knight","path":"objects/obj_dark_knight/obj_dark_knight.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":304.0,"y":192.0,},
+        {"$GMRInstance":"v4","%Name":"inst_27B0921A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_27B0921A","objectId":{"name":"obj_ranged_enemy","path":"objects/obj_ranged_enemy/obj_ranged_enemy.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":176.0,"y":80.0,},
       ],"layers":[],"name":"lay_instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
     {"$GMRTileLayer":"","%Name":"lay_background","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"lay_background","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":32,"SerialiseWidth":48,"TileCompressedData":[
           -16,32,-2,1073741856,-28,32,-2,1073741856,2,32,1,-14,8,2,1073741825,1073741856,-15,32,1,1,-12,8,20,1073741825,

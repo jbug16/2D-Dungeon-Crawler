@@ -65,6 +65,7 @@
     {"name":"obj_music","order":10,"path":"objects/obj_music/obj_music.yy",},
     {"name":"obj_pot_large","order":6,"path":"objects/obj_pot_large/obj_pot_large.yy",},
     {"name":"obj_projectile","order":9,"path":"objects/obj_projectile/obj_projectile.yy",},
+    {"name":"obj_ranged_enemy","order":3,"path":"objects/obj_ranged_enemy/obj_ranged_enemy.yy",},
     {"name":"obj_scroll_map","order":11,"path":"objects/obj_scroll_map/obj_scroll_map.yy",},
     {"name":"obj_shader","order":9,"path":"objects/obj_shader/obj_shader.yy",},
     {"name":"obj_slab","order":1,"path":"objects/obj_slab/obj_slab.yy",},

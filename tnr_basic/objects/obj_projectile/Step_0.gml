@@ -19,11 +19,13 @@ if obj_stats.menuOpen then {
 }//ebd if
 
 if attackType == ATTACK_TYPE_MAGIC {
-	timer += 1;
+	if !is_undefined(spellData) {
+		timer += 1;
 
-	if timer = 8 then {
-		seqID = layer_sequence_create("lay_instances", x + hspeed, y + vspeed , spellData.travelSequence);
-		timer = 0;
+		if timer = 8 then {
+			seqID = layer_sequence_create("lay_instances", x + hspeed, y + vspeed , spellData.travelSequence);
+			timer = 0;
+		}//end if
 	}//end if
 	
 	sprite_index = spr_fire_ball;
