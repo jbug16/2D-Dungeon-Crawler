@@ -198,10 +198,10 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"room_init","path":"rooms/room_init/room_init.yy",},},
-    {"roomId":{"name":"room_test_dungeon","path":"rooms/room_test_dungeon/room_test_dungeon.yy",},},
     {"roomId":{"name":"room_level_1","path":"rooms/room_level_1/room_level_1.yy",},},
     {"roomId":{"name":"room_level_2","path":"rooms/room_level_2/room_level_2.yy",},},
     {"roomId":{"name":"room_level_3","path":"rooms/room_level_3/room_level_3.yy",},},
+    {"roomId":{"name":"room_test_dungeon","path":"rooms/room_test_dungeon/room_test_dungeon.yy",},},
   ],
   "templateType":null,
   "TextureGroups":[
