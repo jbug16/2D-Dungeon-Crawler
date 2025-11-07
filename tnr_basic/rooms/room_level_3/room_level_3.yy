@@ -159,9 +159,10 @@
           -83,32,
         ],"TileDataFormat":1,},"tilesetId":{"name":"til_dungeon","path":"tilesets/til_dungeon/til_dungeon.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRTileLayer":"","%Name":"lay_collision","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"lay_collision","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":16,"SerialiseWidth":24,"TileCompressedData":[
-          -50,1,-4,4,-8,1,-6,4,-6,1,-4,4,-8,1,-6,4,-6,1,-4,4,-8,5,-6,4,-6,1,-4,4,-3,1,1,5,-4,1,-3,4,-9,1,-4,4,
-          -3,1,1,5,-4,1,-2,4,1,2,-9,1,-10,4,-14,1,-10,4,-14,1,-10,4,-4,1,-6,4,-6,1,1,5,-3,1,-4,4,-4,1,-6,4,-6,
-          1,1,5,-3,1,-4,4,-4,5,-6,4,-4,1,-4,4,-2,1,-4,4,-4,1,-6,4,-4,1,-4,4,-10,1,-6,4,-4,1,-4,4,-42,1,
+          -50,1,-4,4,-8,1,-6,4,-6,1,-4,4,-8,1,-6,4,-6,1,-4,4,1,7,-6,5,1,7,-6,4,-6,1,-4,4,-3,1,1,5,-4,1,-3,4,-9,
+          1,-4,4,-3,1,1,7,-4,1,-2,4,1,2,-9,1,-10,4,-14,1,-10,4,-14,1,-10,4,-4,1,-6,4,-6,1,1,5,-3,1,-4,4,-4,1,-6,
+          4,-6,1,1,7,-3,1,-4,4,1,7,-3,5,-6,4,-4,1,-4,4,-2,1,-4,4,-4,1,-6,4,-4,1,-4,4,-10,1,-6,4,-4,1,-4,4,-42,
+          1,
         ],"TileDataFormat":1,},"tilesetId":{"name":"til_collision","path":"tilesets/til_collision/til_collision.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4294945280,"depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
